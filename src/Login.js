@@ -32,19 +32,7 @@ export const Login = () => {
                     <div>                                            
                         <p> Login </p>                       
                                                        
-                        <form> 
-                            <div>
-                                <label htmlFor="first-name">
-                                    First Name
-                                </label>
-                                <input
-                                    id="first-name"
-                                    name="firstname"
-                                    type="firstname"                                    
-                                    required                                                                                
-                                    placeholder="First Name"
-                                />
-                            </div>                                             
+                        <form>                                           
                             <div>
                                 <label htmlFor="email-address">
                                     Email address

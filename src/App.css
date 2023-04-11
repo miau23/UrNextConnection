@@ -2,20 +2,3 @@
   text-align: center;
   color: #13294B;
 }
-.welcome-statement {
-  font-size: 24px;
-}
-.signupbtn{
-  background-color:#13294B;
-  color:white;
-  font-size: 24px;
-  border-radius: 4px;
-  border-color: #13294B;
-  padding: 14px 40px;
-}
-.loginbtn{
-  background-color: white;
-  border-color: white;
-  color:#13294B;
-  font-size: 16px;
-}
