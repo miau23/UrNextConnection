@@ -1,0 +1,38 @@
+.send-button{
+    background-color:#12337D;
+    color:white;
+    font-size: 30px;
+    width: 10%;
+    border-color: #12337D;
+    font-weight: bold;
+}
+.sendbtnholder{
+    padding-top: 30px;
+}
+.header-1{
+    font-size: 50px;
+    color: #12337D;
+}
+.header-2{
+    color: #12337D;
+    font-weight: bold
+}
+.header-3{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.contact-form{
+    padding-left: 10%;
+}
+#name,#email,#subject,#message{
+    width: 50%;
+    height: 40px;
+}
+
+#message{
+    height: 150px;
+
+}
+#seemore{
+    padding-right: 10%;
+}
