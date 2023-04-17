@@ -1,22 +1,38 @@
 .Home {
     text-align: center;
+  }
+#welcomeStatement{
+    font-size: 70px;
     color: #13294B;
   }
-.welcome-statement {
-    font-size: 24px;
-  }
   .signupbtn{
-    background-color:#13294B;
+    background-color:#12337D;
     color:white;
-    font-size: 24px;
-    border-radius: 4px;
-    border-color: #13294B;
-    padding: 14px 40px;
+    font-size: 55px;
+    border-color: #12337D;
+    width: 20%;
   }
   .loginbtn{
     background-color: white;
     border-color: white;
-    color:#13294B;
-    font-size: 16px;
+    color:#12337D;
+    font-size: 30px;
+    width: 10%;
+    font-weight: bold;
   }
+  .welcome{
+    padding-top: 15%;
+    padding-bottom: 15%;
+  }
+  #biglogo {
+    width: 1000px;
   
+  }
+  .already{
+    padding-top: 70px;
+    font-size: 40px;
+    color: #12337D;
+  }
+  .signup-button{
+    padding-top: 20px;
+  }

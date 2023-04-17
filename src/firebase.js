@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
+import { getDatabase } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -14,7 +15,8 @@ const firebaseConfig = {
   storageBucket: "urnextconnection.appspot.com",
   messagingSenderId: "156998819479",
   appId: "1:156998819479:web:758ec08cd847b7eecc53d2",
-  measurementId: "G-FV2PTEZ09E"
+  measurementId: "G-FV2PTEZ09E",
+  databaseURL: "https://urnextconnection-default-rtdb.firebaseio.com/"
 };
 
 // Initialize Firebase
@@ -22,4 +24,6 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 export const auth = getAuth(app);
+// Initialize Realtime Database and get a reference to the service
+export const database = getDatabase(app);
 export default app;

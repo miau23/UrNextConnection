@@ -1,0 +1,63 @@
+label {
+    display:block;
+}
+#smalllogo{
+    width:10%;
+    padding-top: 20px;
+}
+.loginheader{
+    padding-top: 10%;
+    font-size: 50px;
+    color: #12337D;
+}
+.signupheader{
+    padding-top: 5%;
+    font-size: 50px;
+    color: #12337D;
+}
+.signUp{
+    padding-top: 20px;
+    font-size: 20px;
+    color: #12337D;
+}
+.Login{
+    font-size: 20px;
+    color: #12337D;
+}
+.loginpagebtn, .verifybtn{
+    background-color:#12337D;
+    color:white;
+    font-size: 30px;
+    width: 10%;
+    border-color: #12337D;
+    font-weight: bold;
+}
+#loginbuttonholder{
+    padding-top: 50px;
+}
+.labels{
+    font-size: 40px;
+    color: #12337D;
+}
+#email-address, #password, #first-name, #last-name, #grad-year, #onyen{
+    width:30%;
+    text-align: center;
+    background-color: #D8EAFF;
+    border-color:#D8EAFF;
+    color:#13294B ;
+    border-radius: 25px;
+    padding: 10px 25px;
+
+}
+::placeholder{
+    color: #13294B ;
+    font-size: 20px;
+}
+#verifybuttonholder{
+    padding-top: 50px;
+}
+.loginPrompt{
+    padding-top: 100px; 
+    color: #13294B ;
+    font-size: 20px;
+}
