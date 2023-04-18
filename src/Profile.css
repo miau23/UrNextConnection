@@ -1,0 +1,57 @@
+.label {
+    font-size: 50px;
+    color: #12337D;
+    font-weight: bold;
+}
+.edit-profile-btn{
+    border-color:#12337D;
+    color:#12337D;
+    background-color: #BEE497;
+    font-size: 30px;
+    width: 10%;
+}
+.logout-btn{
+    border-color:#12337D;
+    color:#12337D;
+    background-color: #F27F7F; 
+    font-size: 30px;
+    width: 10%;  
+}
+
+.blocked-users-btn{
+    border-color: red;
+    color: red;  
+    background-color: white; 
+    font-size: 30px;
+    width: 15%;
+}
+.profile{
+    font-size: 100px;
+    color: #12337D;
+    font-weight: bold;
+}
+#profilepic{
+    width: 320px;
+    height: 350px;
+    border-radius: 8px;
+    border-color: #12337D;
+
+}
+#padding{
+    padding-top: 30px;
+}
+.text {
+    color: #12337D;
+}
+.tags{
+    background-color: #D8EAFF;
+    border-radius: 15px;
+    border-color: #12337D;
+    border: #12337D;
+}
+.pref{
+    width: 40%;
+}
+#bottom{
+    padding-bottom: 100px;
+}
