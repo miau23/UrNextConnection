@@ -1,8 +1,8 @@
 import React from 'react';
-import {NavBar} from './NavBar';
+import {NavBar} from '../Tools/NavBar';
 import Button from 'react-bootstrap/Button';
 import { Row, Col } from 'react-bootstrap';
-import mia from "./Uitz_Mia_photojpeg.jpg";
+import mia from "../Tools/Uitz_Mia_photojpeg.jpg";
 import './Profile.css';
 
 

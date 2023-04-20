@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "./UrNextConnectionLogo.png";
+import logo from "../Tools/UrNextConnectionLogo.png";
 import './Home.css';
 import {useNavigate} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';

@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavBar} from './NavBar'
+import {NavBar} from '../Tools/NavBar'
 import { Row, Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import './Help.css';

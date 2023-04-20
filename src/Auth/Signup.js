@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import {  createUserWithEmailAndPassword } from 'firebase/auth';
 import { ref, set } from "firebase/database";
-import { auth, database} from './firebase';
+import { auth, database} from '../firebase';
 import Button from 'react-bootstrap/Button';
 import { Row, Col } from 'react-bootstrap';
-import logo from "./UrNextConnectionLogo.png";
+import logo from "./../Tools/UrNextConnectionLogo.png";
 import './Login.css';
  
 export const Signup = () => {
@@ -19,7 +19,7 @@ export const Signup = () => {
     const [gradYear, setGradYear] = useState('');
 
    function writeUserData() {
-        set(ref(database, 'users/' + 1), {
+        set(ref(database, 'users/' + onyen), {
             firstName: firstName,
             lastName: lastName,
             onyen: onyen,
@@ -27,6 +27,12 @@ export const Signup = () => {
             email:email,
             hidden: false,
             firstLogin: true
+        }).then(() => {
+            console.log('successfully added user');
+        }).catch((error)=> {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage); 
         });
     }
  

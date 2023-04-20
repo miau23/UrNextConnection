@@ -1,11 +1,11 @@
 import React from 'react';
-import {Login} from './Login';
-import {Signup} from './Signup';
-import {Home} from './Home';
-import {HomePage} from './HomePage';
-import {Connections} from './Connections';
-import {Help} from './Help';
-import {Profile} from './Profile';
+import {Login} from './Auth/Login';
+import {Signup} from './Auth/Signup';
+import {Home} from './Auth/Home';
+import {HomePage} from './Main/HomePage';
+import {Connections} from './Main/Connections';
+import {Help} from './Main/Help';
+import {Profile} from './Main/Profile';
 import './App.css';
 import { BrowserRouter as Router} from 'react-router-dom';
 import {Routes, Route} from 'react-router-dom';
