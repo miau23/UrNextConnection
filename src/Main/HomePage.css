@@ -1,0 +1,35 @@
+.user-cards{
+    width: 50%;
+    padding: 10%;
+    background-color: #D9D9D9;
+    border-color: #12337D;
+    border-radius: 10px;
+}
+#user-image{
+    width:100%;
+}
+.card-holder{
+    padding:5% 10% 5% 10%;
+}
+.card-title{
+    color: #12337D;
+}
+.card-content{
+    color: #12337D;
+}
+.plus-button{
+    border-radius: 200px;
+    background-color: #12337D;
+    color:#D8EAFF;
+}
+.explore{
+    color:#12337D;
+    font-size: 50px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left: 25px;
+}
+.addSearch{
+    color:#12337D;
+    padding-left: 25px;
+}

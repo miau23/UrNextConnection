@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap'
-import logo from "./UrNextConnectionLogo.png";
+import logo from "./dark-blue-logo.png";
 import './NavBar.css';
 
 export const NavBar = () => {
@@ -10,7 +10,7 @@ export const NavBar = () => {
        <Navbar expand="lg" className = "nav-bar">
             <LinkContainer to="/homePage">
                 <Navbar.Brand>
-                    <img src={logo} alt="UrNextConnection Logo"></img>  
+                    <img id="nav-logo" src={logo} alt="UrNextConnection Logo"></img>  
                 </Navbar.Brand>
             </LinkContainer>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
