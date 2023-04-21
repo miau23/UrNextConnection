@@ -6,6 +6,7 @@ import {HomePage} from './Main/HomePage';
 import {Connections} from './Main/Connections';
 import {Help} from './Main/Help';
 import {Profile} from './Main/Profile';
+import {EditProfile} from './Main/EditProfile'
 import './App.css';
 import { BrowserRouter as Router} from 'react-router-dom';
 import {Routes, Route} from 'react-router-dom';
@@ -24,6 +25,7 @@ function App() {
                <Route path="/connections" element={<Connections/>}/>
                <Route path="/help" element={<Help/>}/>
                <Route path="/profile" element={<Profile/>}/>
+               <Route path="/editProfile" element={<EditProfile/>}/>
             </Routes>                    
         </section>
       </div>

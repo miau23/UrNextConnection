@@ -4,10 +4,17 @@ import Button from 'react-bootstrap/Button';
 import { Row, Col } from 'react-bootstrap';
 import mia from "../Tools/Uitz_Mia_photojpeg.jpg";
 import './Profile.css';
+import { useNavigate } from 'react-router-dom'
 
 
 
 export const Profile = () => {
+    const navigate = useNavigate();
+
+    const onEdit = (e) => {
+        e.preventDefault();
+        navigate("/editProfile");
+    }
     return (
     <div>
         <NavBar></NavBar>
@@ -16,7 +23,7 @@ export const Profile = () => {
             <h1 className ='profile'> Profile </h1>
             <img id = "profilepic" src={mia} alt="Profile Photo"></img> 
             <div id="padding"></div>                                           
-            <Button className = 'edit-profile-btn'> Edit Profile </Button>
+            <Button className = 'edit-profile-btn' onClick={onEdit}> Edit Profile </Button>
             <div id="padding">
             </div>
             <h2 className ='label'> Name </h2>
