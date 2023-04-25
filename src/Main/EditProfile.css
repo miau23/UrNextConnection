@@ -1,0 +1,19 @@
+.pronoun-selector,.city-selector, #bio{
+    width:30%;
+    text-align: center;
+    background-color: #D8EAFF;
+    border-color:#D8EAFF;
+    color:#13294B ;
+    border-radius: 25px;
+    padding: 10px 25px;
+}
+#bio{
+    width:50%;
+    text-align: center;
+    background-color: #D8EAFF;
+    border-color:#D8EAFF;
+    color:#13294B ;
+    border-radius: 25px;
+    padding: 10px 25px;
+    padding-bottom: 10%;
+}

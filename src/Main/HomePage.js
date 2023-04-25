@@ -1,8 +1,7 @@
-import { get, child , ref, getDatabase, onValue} from 'firebase/database';
+import { ref, getDatabase, onValue} from 'firebase/database';
 import React, { useState, useEffect} from 'react';
 import {NavBar} from '../Tools/NavBar';
-import { Row, Col, Card } from 'react-bootstrap';
-import mia from "../Tools/Uitz_Mia_photojpeg.jpg";
+import { Row, Col } from 'react-bootstrap';
 import './HomePage.css';
 import Button from 'react-bootstrap/Button';
 
@@ -13,6 +12,7 @@ import Button from 'react-bootstrap/Button';
 export const HomePage = () => {
     const [allUsers, setAllUsers] = useState([]);
     const database = ref(getDatabase(), 'users/');
+    
     useEffect(() => {
         getAllUsers();
     }, []);
@@ -54,7 +54,7 @@ export const HomePage = () => {
                 <Col>
                     <div className ="card-holder">
                     <div class="card" className ="user-cards">
-                    <img id="user-image" class="card-img-top" src={mia} alt="Card image"></img>
+                    <img id="user-image" class="card-img-top" src={row.data.photoUrl} alt="Card image"></img>
                         <div class="card-body">
                             <h4 className ="card-title" class="card-title"> {row.data.firstName + ' ' + row.data.lastName}</h4>
                             <p className ="card-content" class ="card-text">{row.data.gradYear} </p>

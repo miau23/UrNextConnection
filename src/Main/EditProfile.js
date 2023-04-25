@@ -1,15 +1,42 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {NavBar} from '../Tools/NavBar';
 import Button from 'react-bootstrap/Button';
 import { Row, Col } from 'react-bootstrap';
+import { get, child , ref, getDatabase, onValue} from 'firebase/database';
 import './Profile.css';
-import mia from "../Tools/Uitz_Mia_photojpeg.jpg";
+import './EditProfile.css';
 import { useNavigate } from 'react-router-dom';
 
 
 
 export const EditProfile = () => {
     const navigate = useNavigate();
+    const [userProfile, setUserProfile] = useState([]);
+    const database = ref(getDatabase());
+    useEffect(() => {
+        getProfile();
+    }, []);
+
+    //redundant so get rid of later to make more concise by sending info as a prop or something...idk 
+    function getProfile(){
+        get(child(database, 'users/'+ 'mia23'))
+            .then((snapshot) => {
+                let tempProfile = [];
+                if(snapshot.exists()){
+                    console.log(snapshot.val())
+                    let keyName = snapshot.key;
+                    let data = snapshot.val();
+                    tempProfile.push({"key": keyName, "data": data});
+                    setUserProfile(tempProfile);
+                }
+                else{
+                   console.log('no data found');
+                }
+            }) .catch((error) => {
+                console.log(error);
+            })
+    }
+
     const onSave = (e) =>{
         e.preventDefault();
         navigate("/profile");
@@ -18,10 +45,12 @@ export const EditProfile = () => {
     return (
         <div>
             <NavBar></NavBar>
+            {userProfile.map((row) => {
+                return(
             <Row>
                 <Col align="center">
                     <h1 className ='profile'> Edit Profile </h1>
-                    <img id = "profilepic" src={mia} alt="Profile Photo"></img> 
+                    <img id = "profilepic" src={row.data.photoUrl} alt="Profile Photo"></img> 
                     <div id="padding"></div>                                           
                         <form>
                                 <div>
@@ -31,7 +60,8 @@ export const EditProfile = () => {
                                     <input
                                         id="first-name"
                                         name="firstname"
-                                        type="firstname"                                    
+                                        type="firstname"    
+                                        placeholder={row.data.firstName}                                
                                         required
                                     />
                                 </div>
@@ -44,32 +74,33 @@ export const EditProfile = () => {
                                         name="lastname"
                                         type="lastname"                                    
                                         required   
-                                        placeholder="Last Name"
+                                        placeholder={row.data.lastName}
                                     />
                                 </div>
                                 <div>
                                     <label className = "label" htmlFor="pronouns">
                                         Pronouns
                                     </label>
-                                    <input
-                                        id="pronouns"
-                                        name="pronouns"
-                                        type="pronouns"                                    
-                                        required
-                                        placeholder="pronouns"
-                                    />
+                                    <select class="custom-select" className="pronoun-selector">
+                                        <option selected>Currently: {row.data.pronouns} </option>
+                                        <option value="she/her/hers">she/her/hers</option>
+                                        <option value="he/him/hers">he/him/his</option>
+                                        <option value="they/them/theirs">they/them/theirs</option>
+                                    </select>
                                 </div>
                                 <div>
                                     <label className = "label" htmlFor="city">
                                         City
                                     </label>
-                                    <input
-                                        id="city"
-                                        name="city"
-                                        type="city"                                    
-                                        required
-                                        placeholder="city"
-                                    />
+                                    <select class="custom-select" className="city-selector">
+                                        <option selected>Currently: {row.data.city} </option>
+                                        <option value="Chapel Hill, NC">Chapel Hill, NC</option>
+                                        <option value="New York, NY">New York, NY</option>
+                                        <option value="Raleigh, NC">Raleigh, NC</option>
+                                        <option value="Atlanta, GA">Atlanta, GA</option>
+                                        <option value="Charlotte, NC">Charlotte, NC</option>
+                                        <option value="Dallas, TX">Dallas, TX</option>
+                                    </select>
                                 </div>
                                 <div>
                                     <label className = "label" htmlFor="grad-year">
@@ -80,7 +111,7 @@ export const EditProfile = () => {
                                         name="gradyear"
                                         type="gradyear"                                    
                                         required
-                                        placeholder="Grad Year"
+                                        placeholder={row.data.gradYear}
                                     />
                                 </div>                                                                                                              
                                 <div>
@@ -92,7 +123,7 @@ export const EditProfile = () => {
                                         type="email"
                                         label="Email address"
                                         required                                    
-                                        placeholder="Email address"                                
+                                        placeholder={row.data.email}                              
                                     />
                                 </div>
 
@@ -129,7 +160,7 @@ export const EditProfile = () => {
                                         type="bio"
                                         label="bio"
                                         required                                 
-                                        placeholder="Bio"              
+                                        placeholder={row.data.bio}             
                                     />
                                 </div>                                                 
                                 <div id = "verifybuttonholder">
@@ -149,6 +180,7 @@ export const EditProfile = () => {
                         
                 </Col>
             </Row>
+             )})}
         </div>
     )
 }
