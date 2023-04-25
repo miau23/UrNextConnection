@@ -1,5 +1,5 @@
 .user-cards{
-    width: 50%;
+    width: 100%;
     padding: 10%;
     background-color: #D9D9D9;
     border-color: #12337D;
@@ -32,4 +32,30 @@
 .addSearch{
     color:#12337D;
     padding-left: 25px;
+}
+.city-search, .grad-year-search, .tag-search {
+    font-size: 25px;
+    color:#12337D;
+}
+.city-search-selector, .tag-search-selector{
+    width:100%;
+    text-align: center;
+    background-color: #D8EAFF;
+    border-color:#D8EAFF;
+    color:#13294B ;
+    border-radius: 25px;
+    padding: 10px 10px;
+}
+.max-selector,.min-selector{
+    width:40%;
+    text-align: center;
+    background-color: #D8EAFF;
+    border-color:#D8EAFF;
+    color:#13294B ;
+    border-radius: 25px;
+    padding: 10px 10px;
+}
+
+.city-box, .grad-year-box{
+    padding-left: 30px;
 }

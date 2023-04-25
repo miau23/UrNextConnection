@@ -21,7 +21,6 @@ export const Profile = () => {
             .then((snapshot) => {
                 let tempProfile = [];
                 if(snapshot.exists()){
-                    console.log(snapshot.val())
                     let keyName = snapshot.key;
                     let data = snapshot.val();
                     tempProfile.push({"key": keyName, "data": data});
@@ -48,7 +47,7 @@ export const Profile = () => {
             {userProfile.map((row) => {
                 return(
                 <div>
-                    <img id = "profilepic" src={row.data.photoUrl} alt="Profile Photo"></img> 
+                    {row.data.photoUrl ? <img id = "profilepic" src={row.data.photoUrl} alt="Profile Photo"></img> : <img id = "profilepic" src={'https://t4.ftcdn.net/jpg/01/86/29/31/360_F_186293166_P4yk3uXQBDapbDFlR17ivpM6B1ux0fHG.jpg'} alt="Profile Photo"></img> }
                     <div id="padding"></div>                                           
                     <Button className = 'edit-profile-btn' onClick={onEdit}> Edit Profile </Button>
                     <div id="padding">

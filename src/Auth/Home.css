@@ -2,13 +2,13 @@
     text-align: center;
   }
 #welcomeStatement{
-    font-size: 70px;
+    font-size: 400%;
     color: #13294B;
   }
   .signupbtn{
     background-color:#12337D;
     color:white;
-    font-size: 55px;
+    font-size: 350%;
     border-color: #12337D;
     width: 20%;
   }
@@ -16,7 +16,7 @@
     background-color: white;
     border-color: white;
     color:#12337D;
-    font-size: 30px;
+    font-size: 250%;
     width: 10%;
     font-weight: bold;
   }
@@ -25,12 +25,12 @@
     padding-bottom: 15%;
   }
   #biglogo {
-    width: 1000px;
+    width: 100%;
   
   }
   .already{
     padding-top: 70px;
-    font-size: 40px;
+    font-size: 200%;
     color: #12337D;
   }
   .signup-button{
