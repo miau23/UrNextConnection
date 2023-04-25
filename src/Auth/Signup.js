@@ -19,6 +19,8 @@ export const Signup = () => {
     const [gradYear, setGradYear] = useState('');
 
    function writeUserData() {
+        let commList = {}
+        commList.email = email;
         set(ref(database, 'users/' + onyen), {
             firstName: firstName,
             lastName: lastName,
@@ -26,7 +28,8 @@ export const Signup = () => {
             gradYear:gradYear,
             email:email,
             hidden: false,
-            firstLogin: true
+            firstLogin: true,
+            comm: commList
         }).then(() => {
             console.log('successfully added user');
         }).catch((error)=> {

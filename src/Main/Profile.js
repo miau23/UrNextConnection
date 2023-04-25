@@ -75,14 +75,19 @@ export const Profile = () => {
                     <h2 className ='label'> Preferred Method(s) of Communication</h2>
                     <Row>
                         <Col align= 'center'>
-                            <h3 className = 'text tags pref'> Email (mia@live.unc.edu)</h3>
+                            <h3 className = 'text tags pref'> Email ({row.data.comm.email})</h3>
                         </Col>
                     </Row>
-                    <Row>
+                    {row.data.comm.instagram ? <Row>
                         <Col align= 'center'>
-                            <h3 className = 'text tags pref'> Instagram (@Mia)</h3>
+                            <h3 className = 'text tags pref'> Instagram ({row.data.comm.instagram})</h3>
                         </Col>
-                    </Row>
+                    </Row>: <div></div>}
+                    {row.data.comm.number ?<Row>
+                        <Col align= 'center'>
+                            <h3 className = 'text tags pref'> Phone Number ({row.data.comm.number})</h3>
+                        </Col>
+                    </Row>: <div></div> }
                     <h2 className ='label'> Tags </h2>
                     <Row>
                         <Col>

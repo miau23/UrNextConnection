@@ -13,6 +13,7 @@ export const EditProfile = () => {
     const navigate = useNavigate();
     const [userProfile, setUserProfile] = useState([]);
     const database = ref(getDatabase());
+    //state objects for all the different parts of the profile
     const [email, setEmail] = useState('')
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -20,8 +21,14 @@ export const EditProfile = () => {
     const [bio, setBio] = useState('');
     const [city, setCity] = useState('');
     const [pronouns, setPronouns] = useState('');
-    const [tags, setTags] = useState([]);
-    const {comm, setComm} = useState([]);
+    const [tags1, setTags1] = useState('');
+    const [tags2, setTags2] = useState('');
+    const [tags3, setTags3] = useState('');
+    const [tags4, setTags4] = useState('');
+    const [commEmail, setCommEmail] = useState('');
+    const [commNum, setCommNum] = useState('');
+    const [commInsta, setCommInsta]= useState('');
+
 
 
 
@@ -50,7 +57,9 @@ export const EditProfile = () => {
 
     //create object with all the user info to update
     function updatedUser(){
-        updatedUser = [];
+        let updatedUser = [];
+        let tagsList = [];
+        let commList = {};
         if(email){
             updatedUser.push({"email":email})
         }
@@ -72,14 +81,43 @@ export const EditProfile = () => {
         if(pronouns){
             updatedUser.push({"pronouns":pronouns})
         }
+        if(tags1){
+            tagsList.push(tags1);
+        }
+        if(tags2){
+            tagsList.push(tags2);
+        }
+        if(tags3){
+            tagsList.push(tags3);
+        }
+        if(tags4){
+            tagsList.push(tags4);
+        }
+        if(tagsList.length != 0){
+            updatedUser.push({"tags": {'tagsList': tagsList}});
+        }
+        if(commEmail){
+            commList.email = commEmail;
+        }
+        if(commInsta){
+            commList.instagram = commInsta;
+        }
+        if(commNum){
+            commList.number = commNum;
+        }
+        console.log(commList)
+        if(commList){
+            updatedUser.push({"comm": commList});
+        }
+
         return updatedUser;
     }
 
     //updates profile if info changed 
     function updateProfile(){
         //console.log(updatedUser());
-        console.log(tags);
         const user = updatedUser()[0];
+        console.log(user);
         if(user){
             update(child(database, 'users/'+ 'mia23'), user )
             .then(() => console.log("successfully updates"))
@@ -172,10 +210,11 @@ export const EditProfile = () => {
                                     </select>
                                 </div>:<div>
                                     <label className = "label" htmlFor="city"
-                                    onChange={(e) => setCity(e.target.value)}>
+                                    >
                                         City
                                     </label>
-                                    <select class="custom-select" className="city-selector">
+                                    <select class="custom-select" className="city-selector"
+                                    onChange={(e) => setCity(e.target.value)}>
                                         <option selected>Choose City </option>
                                         <option value="Chapel Hill, NC">Chapel Hill, NC</option>
                                         <option value="New York, NY">New York, NY</option>
@@ -216,20 +255,82 @@ export const EditProfile = () => {
                                     <label  className = "label" htmlFor="comm">
                                         Preferred Method of Communication
                                     </label>
+                                    <label  className = "sub-label" htmlFor="comm">
+                                        Email
+                                    </label>
                                     <input
-                                        id="comm"
-                                        type="comm"
-                                        label="comm"
+                                        id="comm-email"
+                                        type="comm-email"
+                                        label="comm-email"
                                         required                                 
-                                        placeholder="Preferred Method of Communication"              
+                                        placeholder={row.data.email}  
+                                        onChange={(e) => setCommEmail(e.target.value)}             
+                                    />
+                                    <label  className = "sub-label" htmlFor="comm">
+                                        Instagram
+                                    </label>
+                                    <input
+                                        id="comm-insta"
+                                        type="comm-insta"
+                                        label="comm-insta"
+                                        required                                 
+                                        placeholder="Instagram" 
+                                        onChange={(e) => setCommInsta(e.target.value)}             
+                                    />
+                                    <label  className = "sub-label" htmlFor="comm">
+                                        Phone Number
+                                    </label>
+                                    <input
+                                        id="comm-num"
+                                        type="comm-num"
+                                        label="comm-num"
+                                        required                                 
+                                        placeholder="Phone Number"  
+                                        onChange={(e) => setCommNum(e.target.value)}            
                                     />
                                 </div>
                                 <div>
-                                    <label  className = "label" htmlFor="tags"
-                                    onChange={(e) => setTags(e.target.value)}>
+                                    <label  className = "label" htmlFor="tags">
                                         Tags
                                     </label>
-                                    <select class="custom-select" className="tag-profile-selector">
+                                    <select class="custom-select" className="tag-profile-selector"
+                                    onChange={(e) => setTags1(e.target.value)}>
+                                        <option selected> Choose.. </option>
+                                        <option value="Coffee">Coffee </option>
+                                        <option value="Hiking">Hiking</option>
+                                        <option value="Looking for Roommates">Looking for Roommates</option>
+                                        <option value="Seeking Advice">Seeking Advice</option>
+                                        <option value="Running">Running</option>
+                                        <option value="Night Life">Night Life</option>
+                                        <option value="Video Games">Video Games</option>
+                                        <option value="Reading">Reading</option>
+                                    </select>
+                                    <select class="custom-select" className="tag-profile-selector"
+                                    onChange={(e) => setTags2(e.target.value)}>
+                                        <option selected> Choose.. </option>
+                                        <option value="Coffee">Coffee </option>
+                                        <option value="Hiking">Hiking</option>
+                                        <option value="Looking for Roommates">Looking for Roommates</option>
+                                        <option value="Seeking Advice">Seeking Advice</option>
+                                        <option value="Running">Running</option>
+                                        <option value="Night Life">Night Life</option>
+                                        <option value="Video Games">Video Games</option>
+                                        <option value="Reading">Reading</option>
+                                    </select>
+                                    <select class="custom-select" className="tag-profile-selector"
+                                    onChange={(e) => setTags3(e.target.value)}>
+                                        <option selected> Choose.. </option>
+                                        <option value="Coffee">Coffee </option>
+                                        <option value="Hiking">Hiking</option>
+                                        <option value="Looking for Roommates">Looking for Roommates</option>
+                                        <option value="Seeking Advice">Seeking Advice</option>
+                                        <option value="Running">Running</option>
+                                        <option value="Night Life">Night Life</option>
+                                        <option value="Video Games">Video Games</option>
+                                        <option value="Reading">Reading</option>
+                                    </select>
+                                    <select class="custom-select" className="tag-profile-selector"
+                                    onChange={(e) => setTags4(e.target.value)}>
                                         <option selected> Choose.. </option>
                                         <option value="Coffee">Coffee </option>
                                         <option value="Hiking">Hiking</option>
@@ -263,7 +364,7 @@ export const EditProfile = () => {
                                 </div>
                                 <h2>no longer need your account?</h2>
                                 <h3> hide my profile from other users</h3>
-                                <p>toggle place holder</p>   
+                                <input type="checkbox" checked data-toggle="toggle"/>   
                                 <h3>I want to permanently delete my account</h3>  
                                 <Button className = 'blocked-users-btn'> Delete Account </Button> 
                                 <div id="bottom"></div>                                    

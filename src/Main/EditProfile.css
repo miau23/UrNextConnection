@@ -1,4 +1,4 @@
-.pronoun-selector,.city-selector, #bio{
+.pronoun-selector,.city-selector, #bio, .tag-profile-selector, #comm-email, #comm-insta, #comm-num{
     width:30%;
     text-align: center;
     background-color: #D8EAFF;
@@ -16,4 +16,8 @@
     border-radius: 25px;
     padding: 10px 25px;
     padding-bottom: 10%;
+}
+.sub-label{
+    font-size: 30px;
+    color: #12337D;
 }
