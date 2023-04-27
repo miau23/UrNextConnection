@@ -117,7 +117,7 @@ export const HomePage = () => {
         <Row>
         {allUsers.map((row, index) => {
         return(
-                <Col>
+                <Col className ="col-sm-4">
                     <div className ="card-holder">
                     <div class="card" className ="user-cards">
                     {row.data.photoUrl ? <img id="user-image" class="card-img-top" src={row.data.photoUrl} alt="Card image"></img>: <img id="user-image" class="card-img-top" src='https://t4.ftcdn.net/jpg/01/86/29/31/360_F_186293166_P4yk3uXQBDapbDFlR17ivpM6B1ux0fHG.jpg'alt="Card image"></img> }
