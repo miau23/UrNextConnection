@@ -9,7 +9,7 @@
     width:100%;
 }
 .card-holder{
-    padding:5% 10% 5% 10%;
+    padding:5% 5% 5% 5%;
 }
 .card-title{
     color: #12337D;
@@ -58,4 +58,8 @@
 
 .city-box, .grad-year-box{
     padding-left: 30px;
+}
+.card-rows{
+    padding-left: 100px;
+    padding-right: 25px;
 }

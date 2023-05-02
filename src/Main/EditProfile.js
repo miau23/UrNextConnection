@@ -142,6 +142,8 @@ export const EditProfile = () => {
                 <Col align="center">
                     <h1 className ='profile'> Edit Profile </h1>
                     {row.data.photoUrl ? <img id = "profilepic" src={row.data.photoUrl} alt="Profile Photo"></img> : <img id = "profilepic" src={'https://t4.ftcdn.net/jpg/01/86/29/31/360_F_186293166_P4yk3uXQBDapbDFlR17ivpM6B1ux0fHG.jpg'} alt="Profile Photo"></img> }
+                    <div id="padding"></div>
+                    <Button className = 'edit-photo-btn' > Edit Photo </Button>
                     <div id="padding"></div>                                           
                         <form>
                                 <div>

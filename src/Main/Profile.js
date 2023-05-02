@@ -89,27 +89,16 @@ export const Profile = () => {
                         </Col>
                     </Row>: <div></div> }
                     <h2 className ='label'> Tags </h2>
-                    <Row>
-                        <Col>
-                            <h3 className = 'text tags'> Coffee</h3>
+                    <Row align="center">
+                    {row.data.tags.tagsList.map((trow, i) => {
+                        return(
+                        
+                        <Col align = "center" className ="col-sm-4">
+                            <h3 className = 'text tags'> {trow} </h3>
                         </Col>
-                        <Col>
-                            <h3 className = 'text tags'> Gym</h3>
-                        </Col>
-                        <Col>
-                            <h3 className = 'text tags'> Looking for Recommendations</h3>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <h3 className = 'text tags'> SWE</h3>
-                        </Col>
-                        <Col>
-                            <h3 className = 'text tags'> Basketball</h3>
-                        </Col>
-                        <Col>
-                            <h3 className = 'text tags'> Women</h3>
-                        </Col>
+                        )
+
+                    })}
                     </Row>
                     <h2 className ='label'> Bio </h2>
                     <div>
