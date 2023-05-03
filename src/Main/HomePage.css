@@ -22,6 +22,22 @@
     background-color: #12337D;
     color:#D8EAFF;
 }
+.search-button{
+    background-color: #12337D;
+    color:#D8EAFF;
+    border-radius: 10px;
+    width: 200px;
+}
+.reset-button{
+    background-color: #12337D;
+    color:#D8EAFF;
+    border-radius: 10px;
+    width: 100px;
+}
+#searchPadding{
+    padding-left: 5%;
+    padding-top: 40px;
+}
 .explore{
     color:#12337D;
     font-size: 50px;
