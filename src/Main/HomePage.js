@@ -59,6 +59,10 @@ export const HomePage = () => {
     }
     const onReset = (e) =>{
         e.preventDefault();
+        searchCity('');
+        searchMaxGrad('');
+        searchMinGrad('');
+        searchTags('');
         setAllUsers(allUsersUnTouched);
     }
 
@@ -75,7 +79,7 @@ export const HomePage = () => {
                 </label>
                 <select class="custom-select" className="city-search-selector"
                 onChange={(e) => searchCity(e.target.value)}>
-                    <option selected> {} </option>
+                    <option selected> {city} </option>
                     <option value="Chapel Hill, NC">Chapel Hill, NC</option>
                     <option value="New York, NY">New York, NY</option>
                     <option value="Raleigh, NC">Raleigh, NC</option>
@@ -93,7 +97,7 @@ export const HomePage = () => {
                 </label>
                 <select class="custom-select" className="min-selector"
                 onChange={(e) => searchMinGrad(e.target.value)}>
-                    <option selected> {} </option>
+                    <option selected> {minGrad} </option>
                     <option value="2027">2027</option>
                     <option value="2026">2026</option>
                     <option value="2025">2025</option>
@@ -105,7 +109,7 @@ export const HomePage = () => {
                 </select>
                 <select class="custom-select" className="max-selector"
                 onChange={(e) => searchMaxGrad(e.target.value)}>
-                    <option selected>{} </option>
+                    <option selected>{maxGrad} </option>
                     <option value="2027">2027</option>
                     <option value="2026">2026</option>
                     <option value="2025">2025</option>
@@ -125,7 +129,7 @@ export const HomePage = () => {
                     </label>
                     <select className="custom-select tag-search-selector"
                     onChange={(e) => searchTags(e.target.value)}>
-                        <option selected> {} </option>
+                        <option selected> {tags} </option>
                         <option value="Coffee">Coffee </option>
                         <option value="Hiking">Hiking</option>
                         <option value="Looking for Roommates">Looking for Roommates</option>
