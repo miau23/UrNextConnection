@@ -18,8 +18,9 @@ export const Login = () => {
         .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
+            localStorage.setItem('uid', user.uid)
             navigate("/homePage")
-            console.log(user);
+            console.log(user.uid);
         })
         .catch((error) => {
             const errorCode = error.code;

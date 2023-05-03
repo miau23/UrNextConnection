@@ -7,6 +7,9 @@ import './Profile.css';
 import './EditProfile.css';
 import { useNavigate } from 'react-router-dom';
 
+let updatedUser = {};
+let tagsList = [];
+let commList = {};
 
 
 export const EditProfile = () => {
@@ -28,6 +31,8 @@ export const EditProfile = () => {
     const [commEmail, setCommEmail] = useState('');
     const [commNum, setCommNum] = useState('');
     const [commInsta, setCommInsta]= useState('');
+    const uid = localStorage.getItem("uid");
+
 
 
 
@@ -38,7 +43,7 @@ export const EditProfile = () => {
 
     //redundant so get rid of later to make more concise by sending info as a prop or something...idk 
     function getProfile(){
-        get(child(database, 'users/'+ 'mia23'))
+        get(child(database, 'users/'+ uid))
             .then((snapshot) => {
                 let tempProfile = [];
                 if(snapshot.exists()){
@@ -56,30 +61,28 @@ export const EditProfile = () => {
     }
 
     //create object with all the user info to update
-    function updatedUser(){
-        let updatedUser = [];
-        let tagsList = [];
-        let commList = {};
+    function updateUser(){
+        console.log(pronouns + city);
         if(email){
-            updatedUser.push({"email":email})
+            updatedUser.email = email;
         }
         if(firstName){
-            updatedUser.push({"firstName":firstName})
+            updatedUser.firstName = firstName
         }
         if(lastName){
-            updatedUser.push({"lastName":lastName})
+            updatedUser.lastName = lastName
         }
         if(gradYear){
-            updatedUser.push({"gradYear":gradYear})
+            updatedUser.gradYear = gradYear
         }
         if(bio){
-            updatedUser.push({"bio":bio})
+            updatedUser.bio = bio 
         }
         if(city){
-            updatedUser.push({"city":city})
+            updatedUser.city = city 
         }
         if(pronouns){
-            updatedUser.push({"pronouns":pronouns})
+            updatedUser.pronouns = pronouns
         }
         if(tags1){
             tagsList.push(tags1);
@@ -93,8 +96,8 @@ export const EditProfile = () => {
         if(tags4){
             tagsList.push(tags4);
         }
-        if(tagsList.length != 0){
-            updatedUser.push({"tags": {'tagsList': tagsList}});
+        if(tagsList.length !== 0){
+            updatedUser.tags = {'tagsList': tagsList};
         }
         if(commEmail){
             commList.email = commEmail;
@@ -106,20 +109,20 @@ export const EditProfile = () => {
             commList.number = commNum;
         }
         console.log(commList)
-        if(commList){
-            updatedUser.push({"comm": commList});
+        if(Object.keys(commList).length !==0){
+            updatedUser.comm = commList
         }
-
+        console.log("updated user is " + updatedUser)
         return updatedUser;
     }
 
     //updates profile if info changed 
     function updateProfile(){
         //console.log(updatedUser());
-        const user = updatedUser()[0];
+        const user = updateUser();
         console.log(user);
         if(user){
-            update(child(database, 'users/'+ 'mia23'), user )
+            update(child(database, 'users/'+ uid), user )
             .then(() => console.log("successfully updates"))
             .catch((error) => {
                 console.log(error);
@@ -141,7 +144,7 @@ export const EditProfile = () => {
             <Row>
                 <Col align="center">
                     <h1 className ='profile'> Edit Profile </h1>
-                    {row.data.photoUrl ? <img id = "profilepic" src={row.data.photoUrl} alt="Profile Photo"></img> : <img id = "profilepic" src={'https://t4.ftcdn.net/jpg/01/86/29/31/360_F_186293166_P4yk3uXQBDapbDFlR17ivpM6B1ux0fHG.jpg'} alt="Profile Photo"></img> }
+                    {row.data.photoUrl ? <img id = "profilepic" src={row.data.photoUrl} alt="Profile"></img> : <img id = "profilepic" src={'https://t4.ftcdn.net/jpg/01/86/29/31/360_F_186293166_P4yk3uXQBDapbDFlR17ivpM6B1ux0fHG.jpg'} alt="Profile"></img> }
                     <div id="padding"></div>
                     <Button className = 'edit-photo-btn' > Edit Photo </Button>
                     <div id="padding"></div>                                           

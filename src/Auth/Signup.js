@@ -17,11 +17,11 @@ export const Signup = () => {
     const [lastName, setLastName] = useState('');
     const [onyen, setOnyen] = useState('');
     const [gradYear, setGradYear] = useState('');
+    let commList = {};
 
-   function writeUserData() {
-        let commList = {}
+   function writeUserData(uid) {
         commList.email = email;
-        set(ref(database, 'users/' + onyen), {
+        set(ref(database, 'users/' + uid), {
             firstName: firstName,
             lastName: lastName,
             onyen: onyen,
@@ -46,9 +46,7 @@ export const Signup = () => {
         .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            console.log(user);
-            console.log(firstName + ' ' + lastName + ': ' + onyen + ' ' + gradYear)
-            writeUserData();
+            writeUserData(user.uid);
             navigate("/login")
             // ...
         })

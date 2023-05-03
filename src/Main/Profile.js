@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { get, child , ref, getDatabase, onValue} from 'firebase/database';
+import { get, child , ref, getDatabase} from 'firebase/database';
 import {NavBar} from '../Tools/NavBar';
 import Button from 'react-bootstrap/Button';
 import { Row, Col } from 'react-bootstrap';
@@ -17,7 +17,8 @@ export const Profile = () => {
     }, []);
 
     function getProfile(){
-        get(child(database, 'users/'+ 'mia23'))
+        const uid = localStorage.getItem("uid");
+        get(child(database, 'users/'+ uid))
             .then((snapshot) => {
                 let tempProfile = [];
                 if(snapshot.exists()){
@@ -29,7 +30,7 @@ export const Profile = () => {
                 else{
                    console.log('no data found');
                 }
-            }) .catch((error) => {
+            }).catch((error) => {
                 console.log(error);
             })
     }
@@ -47,7 +48,7 @@ export const Profile = () => {
             {userProfile.map((row) => {
                 return(
                 <div>
-                    {row.data.photoUrl ? <img id = "profilepic" src={row.data.photoUrl} alt="Profile Photo"></img> : <img id = "profilepic" src={'https://t4.ftcdn.net/jpg/01/86/29/31/360_F_186293166_P4yk3uXQBDapbDFlR17ivpM6B1ux0fHG.jpg'} alt="Profile Photo"></img> }
+                    {row.data.photoUrl ? <img id = "profilepic" src={row.data.photoUrl} alt="Profile"></img> : <img id = "profilepic" src={'https://t4.ftcdn.net/jpg/01/86/29/31/360_F_186293166_P4yk3uXQBDapbDFlR17ivpM6B1ux0fHG.jpg'} alt="Profile"></img> }
                     <div id="padding"></div>                                           
                     <Button className = 'edit-profile-btn' onClick={onEdit}> Edit Profile </Button>
                     <div id="padding">
@@ -74,9 +75,12 @@ export const Profile = () => {
                     </div>
                     <h2 className ='label'> Preferred Method(s) of Communication</h2>
                     <Row>
+                        {row.data.comm ? 
+                        <Row>
                         <Col align= 'center'>
                             <h3 className = 'text tags pref'> Email ({row.data.comm.email})</h3>
                         </Col>
+                        </Row>: <div></div>}
                     </Row>
                     {row.data.comm.instagram ? <Row>
                         <Col align= 'center'>
@@ -90,6 +94,8 @@ export const Profile = () => {
                     </Row>: <div></div> }
                     <h2 className ='label'> Tags </h2>
                     <Row align="center">
+                    {row.data.tags? 
+                    <div>
                     {row.data.tags.tagsList.map((trow, i) => {
                         return(
                         
@@ -98,7 +104,7 @@ export const Profile = () => {
                         </Col>
                         )
 
-                    })}
+                    })} </div> :  <h3 className = 'text'>please select tags</h3>}
                     </Row>
                     <h2 className ='label'> Bio </h2>
                     <div>

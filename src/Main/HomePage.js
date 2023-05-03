@@ -101,7 +101,7 @@ export const HomePage = () => {
                     <label className = "tag-search" htmlFor="city">
                         Tags
                     </label>
-                    <select class="custom-select" className="tag-search-selector">
+                    <select className="custom-select tag-search-selector">
                         <option selected> Choose.. </option>
                         <option value="Coffee">Coffee </option>
                         <option value="Hiking">Hiking</option>
@@ -120,8 +120,8 @@ export const HomePage = () => {
         return(
                 <Col className ="col-sm-3">
                     <div className ="card-holder">
-                    <div class="card" className ="user-cards">
-                    {row.data.photoUrl ? <img id="user-image" class="card-img-top" src={row.data.photoUrl} alt="Card image"></img>: <img id="user-image" class="card-img-top" src='https://t4.ftcdn.net/jpg/01/86/29/31/360_F_186293166_P4yk3uXQBDapbDFlR17ivpM6B1ux0fHG.jpg'alt="Card image"></img> }
+                    <div className="card user-cards">
+                    {row.data.photoUrl ? <img id="user-image" className="card-img-top" src={row.data.photoUrl} alt="Card"></img>: <img id="user-image" className="card-img-top" src='https://t4.ftcdn.net/jpg/01/86/29/31/360_F_186293166_P4yk3uXQBDapbDFlR17ivpM6B1ux0fHG.jpg'alt="Card"></img> }
                         <div class="card-body">
                             <h4 className ="card-title" class="card-title"> {row.data.firstName + ' ' + row.data.lastName}</h4>
                             <p className ="card-content" class ="card-text">{row.data.gradYear} </p>
