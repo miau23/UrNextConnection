@@ -72,6 +72,7 @@ export const HomePage = () => {
     return (
     <div>
         <NavBar></NavBar>
+        <div id="all-page-padding">
         <h1 className ="explore">Explore</h1>
         <h2 className = "addSearch">Add Search Criteria</h2>
         <Row>
@@ -165,6 +166,17 @@ export const HomePage = () => {
                         <div className="card-body">
                             <h4 className ="card-title"> {row.data.firstName + ' ' + row.data.lastName}</h4>
                             <p className ="card-content card-text">{row.data.gradYear} </p>
+                            
+                            {row.data.tags ? 
+                                <Row>
+                                {row.data.tags.tagsList.map((trow) => {
+                                    return(
+                                        <Col align = "center" className ="tag-explore col-sm-6">
+                                        <h4 className = 'text tags'> {trow} </h4> 
+                                        </Col>         
+                                    )
+                            })} </Row> :  <div></div>}
+                            
                             <Button className="plus-button"> plus </Button>
                         </div>
                     </div>
@@ -173,6 +185,7 @@ export const HomePage = () => {
         )
         })}
         </Row>
+    </div>
     </div>
     )
 }

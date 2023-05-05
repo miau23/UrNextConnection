@@ -9,7 +9,8 @@
     width:100%;
 }
 .card-holder{
-    padding:5% 5% 5% 5%;
+    padding-top: 5%;
+    padding-bottom: auto;
 }
 .card-title{
     color: #12337D;
@@ -26,16 +27,15 @@
     background-color: #12337D;
     color:#D8EAFF;
     border-radius: 10px;
-    width: 200px;
+    width: 100%;
 }
 .reset-button{
     background-color: #12337D;
     color:#D8EAFF;
     border-radius: 10px;
-    width: 100px;
+    width: 100%;
 }
 #searchPadding{
-    padding-left: 5%;
     padding-top: 40px;
 }
 .explore{
@@ -43,11 +43,9 @@
     font-size: 50px;
     font-weight: bold;
     padding-top: 20px;
-    padding-left: 25px;
 }
 .addSearch{
     color:#12337D;
-    padding-left: 25px;
 }
 .city-search, .grad-year-search, .tag-search {
     font-size: 25px;
@@ -72,6 +70,14 @@
     padding: 10px 10px;
 }
 
-.city-box, .grad-year-box{
+.grad-year-box{
     padding-left: 30px;
+}
+
+.text{
+    font-size: 20px;
+}
+.tag-explore{
+    padding-left: 5px;
+    padding-right:5px;
 }
