@@ -21,3 +21,13 @@
     font-size: 30px;
     color: #12337D;
 }
+#submit-padding{
+    padding-left: 30%;
+}
+.submit-url-btn{
+    background-color:#13294B ;
+    color:#D8EAFF ;
+}
+.pop-up{
+    width:500px;
+}

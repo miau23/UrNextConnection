@@ -6,6 +6,8 @@ import { get, child , ref, getDatabase, update} from 'firebase/database';
 import './Profile.css';
 import './EditProfile.css';
 import { useNavigate } from 'react-router-dom';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 let updatedUser = {};
 let tagsList = [];
@@ -24,6 +26,7 @@ export const EditProfile = () => {
     const [bio, setBio] = useState('');
     const [city, setCity] = useState('');
     const [pronouns, setPronouns] = useState('');
+    const [url, setUrl] = useState('');
     const [tags1, setTags1] = useState('');
     const [tags2, setTags2] = useState('');
     const [tags3, setTags3] = useState('');
@@ -117,9 +120,8 @@ export const EditProfile = () => {
     }
 
     //updates profile if info changed 
-    function updateProfile(){
+    function updateProfile(user){
         //console.log(updatedUser());
-        const user = updateUser();
         console.log(user);
         if(user){
             update(child(database, 'users/'+ uid), user )
@@ -130,11 +132,22 @@ export const EditProfile = () => {
         }
     }
 
+    const onSubmit = (e) =>{
+        e.preventDefault();
+        if(url){
+            updatedUser.photoUrl = url;
+            updateProfile(updatedUser);
+            getProfile();
+        }
+    }
+
     const onSave = (e) =>{
         e.preventDefault();
-        updateProfile();
+        const user = updateUser();
+        updateProfile(user);
         navigate("/profile");
     }
+    
 
     return (
         <div>
@@ -146,7 +159,24 @@ export const EditProfile = () => {
                     <h1 className ='profile'> Edit Profile </h1>
                     {row.data.photoUrl ? <img id = "profilepic" src={row.data.photoUrl} alt="Profile"></img> : <img id = "profilepic" src={'https://t4.ftcdn.net/jpg/01/86/29/31/360_F_186293166_P4yk3uXQBDapbDFlR17ivpM6B1ux0fHG.jpg'} alt="Profile"></img> }
                     <div id="padding"></div>
-                    <Button className = 'edit-photo-btn' > Edit Photo </Button>
+                    <Popup trigger=
+                        { <Button className = 'edit-photo-btn' > Edit Photo </Button>}
+                        position="right center">
+                        <div>
+                            <input
+                                            id="url"
+                                            name="url"
+                                            type="url"                                    
+                                            required   
+                                            onChange={(e) => setUrl(e.target.value)}                                                                                
+                                            placeholder={row.data.photoUrl}
+                            />
+                            <div id="submit-padding">
+                                <Button onClick={onSubmit} className="submit-url-btn">Submit</Button>
+                            </div>
+                        </div>
+                   </Popup>
+                   
                     <div id="padding"></div>                                           
                         <form>
                                 <div>
@@ -182,7 +212,7 @@ export const EditProfile = () => {
                                     </label>
                                     <select class="custom-select" className="pronoun-selector"
                                     onChange={(e) => setPronouns(e.target.value)}>
-                                        <option selected>Currently: {row.data.pronouns} </option>
+                                        <option selected>{row.data.pronouns} </option>
                                         <option value="she/her/hers">she/her/hers</option>
                                         <option value="he/him/hers">he/him/his</option>
                                         <option value="they/them/theirs">they/them/theirs</option>
@@ -193,7 +223,7 @@ export const EditProfile = () => {
                                     </label>
                                     <select class="custom-select" className="pronoun-selector"  
                                     onChange={(e) => setPronouns(e.target.value)}>
-                                        <option selected>Select Pronouns </option>
+                                        <option selected>{row.data.pronouns} </option>
                                         <option value="she/her/hers">she/her/hers</option>
                                         <option value="he/him/hers">he/him/his</option>
                                         <option value="they/them/theirs">they/them/theirs</option>
@@ -205,7 +235,7 @@ export const EditProfile = () => {
                                     </label>
                                     <select class="custom-select" className="city-selector"
                                     onChange={(e) => setCity(e.target.value)}>
-                                        <option selected>Currently: {row.data.city} </option>
+                                        <option selected>{row.data.city} </option>
                                         <option value="Chapel Hill, NC">Chapel Hill, NC</option>
                                         <option value="New York, NY">New York, NY</option>
                                         <option value="Raleigh, NC">Raleigh, NC</option>
@@ -220,7 +250,7 @@ export const EditProfile = () => {
                                     </label>
                                     <select class="custom-select" className="city-selector"
                                     onChange={(e) => setCity(e.target.value)}>
-                                        <option selected>Choose City </option>
+                                        <option selected> {} </option>
                                         <option value="Chapel Hill, NC">Chapel Hill, NC</option>
                                         <option value="New York, NY">New York, NY</option>
                                         <option value="Raleigh, NC">Raleigh, NC</option>
@@ -300,7 +330,7 @@ export const EditProfile = () => {
                                     </label>
                                     <select class="custom-select" className="tag-profile-selector"
                                     onChange={(e) => setTags1(e.target.value)}>
-                                        <option selected> Choose.. </option>
+                                        <option selected> {} </option>
                                         <option value="Coffee">Coffee </option>
                                         <option value="Hiking">Hiking</option>
                                         <option value="Looking for Roommates">Looking for Roommates</option>
@@ -312,7 +342,7 @@ export const EditProfile = () => {
                                     </select>
                                     <select class="custom-select" className="tag-profile-selector"
                                     onChange={(e) => setTags2(e.target.value)}>
-                                        <option selected> Choose.. </option>
+                                        <option selected> {} </option>
                                         <option value="Coffee">Coffee </option>
                                         <option value="Hiking">Hiking</option>
                                         <option value="Looking for Roommates">Looking for Roommates</option>
@@ -324,7 +354,7 @@ export const EditProfile = () => {
                                     </select>
                                     <select class="custom-select" className="tag-profile-selector"
                                     onChange={(e) => setTags3(e.target.value)}>
-                                        <option selected> Choose.. </option>
+                                        <option selected> {} </option>
                                         <option value="Coffee">Coffee </option>
                                         <option value="Hiking">Hiking</option>
                                         <option value="Looking for Roommates">Looking for Roommates</option>
@@ -336,7 +366,7 @@ export const EditProfile = () => {
                                     </select>
                                     <select class="custom-select" className="tag-profile-selector"
                                     onChange={(e) => setTags4(e.target.value)}>
-                                        <option selected> Choose.. </option>
+                                        <option selected> {} </option>
                                         <option value="Coffee">Coffee </option>
                                         <option value="Hiking">Hiking</option>
                                         <option value="Looking for Roommates">Looking for Roommates</option>
@@ -369,7 +399,7 @@ export const EditProfile = () => {
                                 </div>
                                 <h2>no longer need your account?</h2>
                                 <h3> hide my profile from other users</h3>
-                                <input type="checkbox" checked data-toggle="toggle"/>   
+                                <input type="checkbox" data-toggle="toggle"/>   
                                 <h3>I want to permanently delete my account</h3>  
                                 <Button className = 'blocked-users-btn'> Delete Account </Button> 
                                 <div id="bottom"></div>                                    
