@@ -17,6 +17,7 @@ export const HomePage = () => {
     const [maxGrad, searchMaxGrad] = useState('');
     const [minGrad, searchMinGrad] = useState('');
     const [tags,searchTags] = useState('');
+    const uid = localStorage.getItem("uid");
     
     useEffect(() => {
         getAllUsers();
@@ -30,6 +31,8 @@ export const HomePage = () => {
                 let data = childSnapshot.val();
                 tempUsers.push({"key": keyName, "data": data});
             })
+            //console.log(tempUsers);
+            tempUsers = tempUsers.filter(user => user.key !== uid);
             setAllUsers(tempUsers);
             setAllUsersUnTouched(tempUsers);
         })
