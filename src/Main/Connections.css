@@ -1,0 +1,44 @@
+.pend-conn,.my-conn{
+    color:#12337D;
+    font-size: 50px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+.add-search{
+    color:#12337D;
+}
+.conn-box{
+    background-color: #D9D9D9;
+    border-color: #12337D;
+    border-radius: 10px;
+}
+#conn-padding{
+    padding-top:25px;
+    padding-bottom:25px;
+}
+#connProf{
+    width:90%;
+    height: 90%;
+    border-radius: 400px;
+}
+.connName{
+    color: #12337D;
+}
+.connCity{
+    color: #12337D;
+}
+.deny-btn{
+        border-color: #12337D;
+        color: #12337D;  
+        background-color: #F27F7F; 
+        font-size: 100%;
+        width: 100%;
+}
+
+.accept-btn{
+        border-color: #12337D;;
+        color: #12337D;;  
+        background-color: #BEE497; 
+        font-size: 100%;
+        width: 100%;
+}
