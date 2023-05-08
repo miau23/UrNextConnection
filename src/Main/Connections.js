@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {NavBar} from '../Tools/NavBar'
 import { Row, Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
@@ -7,13 +7,32 @@ import emma from "../Tools/emma.png";
 import bob from "../Tools/bob_ross.jpeg"
 
 
-
 export const Connections = () => {
+    const [showUserOne, setUserOne] = useState(0);
+    const [showUserTwo, setUserTwo] = useState(0);
+    const onDenyOne = (e) =>{
+        e.preventDefault();
+        setUserOne(1);
+    }
+    const onDenyTwo = (e) =>{
+        e.preventDefault();
+        setUserTwo(1);
+    }
+    const onAcceptOne = (e) =>{
+        e.preventDefault();
+        setUserOne(2);
+    }
+    const onAcceptTwo = (e) =>{
+        e.preventDefault();
+        setUserTwo(2);
+    }
+
     return (
     <div>
         <NavBar></NavBar>
         <div id="all-page-padding">
         <h1 className ="pend-conn">Pending Connections</h1>
+        {showUserOne === 0 ? 
         <Row className="conn-box">
             <div id="conn-padding"></div>
             <Col className ="col-sm-2">
@@ -48,15 +67,16 @@ export const Connections = () => {
             <Col className="col-sm-2">
                 <Row>
                 <Col className ="extra col-sm-6">
-                    <Button className="deny-btn">Deny</Button>
+                    <Button className="deny-btn" onClick ={onDenyOne}>Deny</Button>
                 </Col>
                 <Col className ="extra col-sm-6">
-                    <Button className="accept-btn">Accept</Button>
+                    <Button className="accept-btn" onClick={onAcceptOne}>Accept</Button>
                 </Col>
                 </Row>
             </Col>
-        </Row>
+        </Row>: <div></div> }
         <div id="padding"></div>
+        {showUserTwo === 0 ? 
         <Row className="conn-box">
             <div id="conn-padding"></div>
             <Col className ="col-sm-2">
@@ -88,15 +108,16 @@ export const Connections = () => {
             <Col className="col-sm-2">
                 <Row>
                 <Col className ="extra col-sm-6">
-                    <Button className="deny-btn">Deny</Button>
+                    <Button className="deny-btn" onClick={onDenyTwo}>Deny</Button>
                 </Col>
                 <Col className ="extra col-sm-6">
-                    <Button className="accept-btn">Accept</Button>
+                    <Button className="accept-btn" onClick={onAcceptTwo}>Accept</Button>
                 </Col>
                 </Row>
             </Col>
-        </Row>
-        <p className='seemore'> See More </p>
+        </Row>: <div></div>}
+        {showUserOne===0&&showUserTwo===0 ? <p className='seemore'> See More </p>: <div></div>}
+        {showUserOne!==0&&showUserTwo!==0? <Col align="center"><p className="noPend"> No Pending Connections </p> </Col>: <div></div>}
         <h1 className ="my-conn">My Connections</h1>
         <Row>
                 <Col className ="col-sm-3">
@@ -173,6 +194,53 @@ export const Connections = () => {
                     </div>
                     </div>
                 </Col>
+                {showUserOne === 2 ?
+                <Col className ="col-sm-3">
+                <div className ="card-holder">
+                <div className="card user-cards">
+                <img id="user-image" className="card-img-top" src={emma} alt="Card"></img>
+                    <div className="card-body">
+                        <h4 className ="card-title"> Emma Chamberlain </h4>
+                        <p className ="card-content card-text"> 2021 </p>
+                            <Row>
+                                   <Col align = "center" className ="tag-explore col-sm-6">
+                                    <h4 className = 'text tags'> Coffee </h4> 
+                                    </Col>   
+                                    <Col align = "center" className ="tag-explore col-sm-6">
+                                    <h4 className = 'text tags'> Hiking </h4> 
+                                    </Col>
+                                    <Col align = "center" className ="tag-explore col-sm-6">
+                                    <h4 className = 'text tags'> Video Games </h4> 
+                                    </Col>    
+                                    <Col align = "center" className ="tag-explore col-sm-6">
+                                    <h4 className = 'text tags'> Seeking Advice </h4> 
+                                    </Col>                      
+                            </Row> 
+                            <Button className="plus-button"> plus </Button>
+                        </div>
+                </div>
+                </div>
+                </Col> : <div></div>}
+                {showUserTwo === 2 ?
+                <Col className ="col-sm-3">
+                <div className ="card-holder">
+                <div className="card user-cards">
+                <img id="user-image" className="card-img-top" src= {bob} alt="Card"></img>
+                    <div className="card-body">
+                        <h4 className ="card-title"> Bob Ross </h4>
+                        <p className ="card-content card-text"> 2023 </p>
+                            <Row>
+                                   <Col align = "center" className ="tag-explore col-sm-6">
+                                    <h4 className = 'text tags'> Reading </h4> 
+                                    <h4 className = 'text tags'> Hiking </h4> 
+                                    <h4 className = 'text tags'> Looking for Roommates </h4> 
+                                    </Col>                             
+                            </Row> 
+                            <Button className="plus-button"> plus </Button>
+                        </div>
+                </div>
+                </div>
+                </Col> : <div></div>}
         </Row>
         </div>
         <div id="padding"></div>
