@@ -13,19 +13,30 @@
     border-radius: 10px;
 }
 #conn-padding{
-    padding-top:25px;
+    padding-top:20px;
     padding-bottom:25px;
 }
 #connProf{
-    width:90%;
-    height: 90%;
+    width:80%;
+    height: 85%;
     border-radius: 400px;
+}
+.picPadding{
+    padding-left: 5px;
 }
 .connName{
     color: #12337D;
+    font-size: 25px;
+}
+.seemore{
+    padding-left: 95%;
+    color:#12337D;
+    font-size: 15px;
+    font-weight: bold;
 }
 .connCity{
     color: #12337D;
+    
 }
 .deny-btn{
         border-color: #12337D;
@@ -41,4 +52,10 @@
         background-color: #BEE497; 
         font-size: 100%;
         width: 100%;
+}
+.request-button{
+        background-color: #12337D;
+        color:#D8EAFF;
+        border-radius: 10px;
+        width: 50%;
 }
