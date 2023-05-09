@@ -34,21 +34,23 @@ export const Connections = () => {
         <h1 className ="pend-conn">Pending Connections</h1>
         {showUserOne === 0 ? 
         <Row className="conn-box">
-            <div id="conn-padding"></div>
-            <Col className ="col-sm-2">
-            <div className='picPadding'>
-            </div>
-            <img id= "connProf" src={emma} alt="connection profile"></img>
+            <Col className="col-sm-2">
+                <div className='picPadding'>
+                    <img align="center" id= "connProf" src={emma} alt="connection profile"></img>
+                </div>
             </Col>
-            <Col className ="col-sm-2">
+            <Col className="col-sm-2">
+                <div id="info-padding">
                 <Row>
                     <h3 className="connName">Emma Chamberlain '21</h3>
                 </Row>
                 <Row>
                     <p className="connCity"> New York, NY</p>
                 </Row>
+                </div>
             </Col>
-            <Col className ="col-sm-6">
+            <Col className="col-sm-5">
+                <div id="tags-margin">
                 <Row>
                 <Col  align ="center" className ="extra col-sm-3">
                     <p className=" text tags">Coffee</p>
@@ -63,8 +65,10 @@ export const Connections = () => {
                     <p className="text tags">Seeking Advice</p>
                 </Col>
                 </Row>
+                </div>
             </Col>
-            <Col className="col-sm-2">
+            <Col className="col-sm-3">
+                <div id="btns-margin">
                 <Row>
                 <Col className ="extra col-sm-6">
                     <Button className="deny-btn" onClick ={onDenyOne}>Deny</Button>
@@ -73,39 +77,44 @@ export const Connections = () => {
                     <Button className="accept-btn" onClick={onAcceptOne}>Accept</Button>
                 </Col>
                 </Row>
+                </div>
             </Col>
         </Row>: <div></div> }
         <div id="padding"></div>
         {showUserTwo === 0 ? 
         <Row className="conn-box">
-            <div id="conn-padding"></div>
-            <Col className ="col-sm-2">
-            <div className='picPadding'>
-            <img id= "connProf" src={bob} alt="connection profile"></img>
-            </div>
+            <Col className="col-sm-2">
+                <div className='picPadding'>
+                    <img align="center" id= "connProf" src={bob} alt="connection profile"></img>
+                </div>
             </Col>
             <Col className ="col-sm-2">
+                <div id="info-padding">
                 <Row>
                     <h3 className="connName">Bob Ross '23</h3>
                 </Row>
                 <Row>
                     <p className="connCity"> Washington, D.C.</p>
                 </Row>
+                </div>
             </Col>
-            <Col className ="col-sm-6">
+            <Col className ="col-sm-5">
+                <div id="tags-margin">
                 <Row>
                 <Col  align ="center" className ="extra col-sm-3">
                     <p className=" text tags">Reading</p>
                 </Col>
-                <Col align ="center" className ="extra col-sm-3">
+                <Col align ="center" className ="extra col-sm-6">
                     <p className="text tags">Looking for Roommates</p>
                 </Col>
                 <Col align ="center" className ="extra col-sm-3">
                     <p className="text tags">Hiking</p>
                 </Col>
                 </Row>
+                </div>
             </Col>
-            <Col className="col-sm-2">
+            <Col className="col-sm-3">
+                <div id="btns-margin">
                 <Row>
                 <Col className ="extra col-sm-6">
                     <Button className="deny-btn" onClick={onDenyTwo}>Deny</Button>
@@ -114,6 +123,7 @@ export const Connections = () => {
                     <Button className="accept-btn" onClick={onAcceptTwo}>Accept</Button>
                 </Col>
                 </Row>
+                </div>
             </Col>
         </Row>: <div></div>}
         {showUserOne===0&&showUserTwo===0 ? <p className='seemore'> See More </p>: <div></div>}
