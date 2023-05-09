@@ -40,10 +40,9 @@
 }
 .explore{
     color:#12337D;
-    font-size: 40px;
+    font-size: 36px;
     font-weight: bold;
     padding-top: 20px;
-    padding-left: 50px;
 }
 .addSearch{
     color:#12337D;
@@ -76,7 +75,7 @@
 }
 
 .text{
-    font-size: 20px;
+    font-size: 16px;
 }
 .tag-explore{
     padding-left: 5px;
