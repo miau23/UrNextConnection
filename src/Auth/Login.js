@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {  signInWithEmailAndPassword} from 'firebase/auth';
 import { auth } from '../firebase';
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import { Row, Col } from 'react-bootstrap';
 import logo from "../Tools/UrNextConnectionLogo.png";
@@ -11,7 +11,11 @@ export const Login = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-       
+    
+    const navigateWelcome = () => {
+        navigate("/");
+    };
+
     const onLogin = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
@@ -77,11 +81,9 @@ export const Login = () => {
                                     </div>                               
                                 </form>
 
-                                <div className = "signUp">
-                                    <NavLink to="/signup">
-                                        Sign up
-                                    </NavLink>
-                                </div>            
+                                <div className="home-button">
+                                    <Button className = "homebtn" onClick={navigateWelcome}>Return Home</Button>
+                                </div>         
                             </div>
                         </Col>
                     </Row>

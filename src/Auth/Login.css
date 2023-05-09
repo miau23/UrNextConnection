@@ -2,18 +2,21 @@ label {
     display:block;
 }
 #smalllogo{
-    width:10%;
+    width:12%;
     padding-top: 20px;
 }
 .loginheader{
     padding-top: 10%;
-    font-size: 50px;
+    padding-bottom: 2%;
+    font-size: 32px;
     color: #12337D;
+    font-weight: bold;
 }
 .signupheader{
-    padding-top: 5%;
-    font-size: 50px;
+    padding-top: 18px;
+    font-size: 32px;
     color: #12337D;
+    font-weight: bold;
 }
 .signUp{
     padding-top: 20px;
@@ -21,43 +24,68 @@ label {
     color: #12337D;
 }
 .Login{
-    font-size: 20px;
     color: #12337D;
 }
 .loginpagebtn, .verifybtn{
     background-color:#12337D;
     color:white;
-    font-size: 30px;
-    width: 10%;
+    font-size: 17px;
+    width: 18%;
     border-color: #12337D;
+    border-radius: 20px;
     font-weight: bold;
 }
 #loginbuttonholder{
     padding-top: 50px;
 }
 .labels{
-    font-size: 40px;
+    font-size: 17px;
     color: #12337D;
+    font-weight: bold;
+    padding: 7px;
 }
 #email-address, #password, #first-name, #last-name, #grad-year, #onyen{
-    width:30%;
+    width:35%;
     text-align: center;
     background-color: #D8EAFF;
-    border-color:#D8EAFF;
+    border:#12337D  solid;
     color:#13294B ;
-    border-radius: 25px;
+    border-radius: 20px;
     padding: 10px 25px;
 
 }
 ::placeholder{
     color: #13294B ;
-    font-size: 20px;
+    font-size: 15px;
 }
 #verifybuttonholder{
-    padding-top: 50px;
+    padding-top: 30px;
 }
 .loginPrompt{
-    padding-top: 100px; 
+    padding-top: 17px; 
     color: #13294B ;
-    font-size: 20px;
+    font-size: 17px;
+}
+
+.homebtn{
+    background-color: white;
+    border-color: white;
+    border-radius: 20px;
+    color:#12337D;
+    font-size: 17px;
+    width: 10%;
+    font-weight: bold;
+}
+.home-button{
+    padding-top: 180px;
+  }
+
+.login-btn{
+    background-color: white;
+    border-color: white;
+    border-radius: 20px;
+    color:#12337D;
+    font-size: 17px;
+    width: 10%;
+    font-weight: bold;
 }
