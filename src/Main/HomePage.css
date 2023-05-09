@@ -1,6 +1,6 @@
 .user-cards{
     width: 100%;
-    padding: 10%;
+    padding:5%;
     background-color: #D9D9D9;
     border-color: #12337D;
     border-radius: 10px;
@@ -10,18 +10,28 @@
 }
 .card-holder{
     padding-top: 5%;
-    padding-bottom: auto;
+}
+#imgPad{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
 }
 .card-title{
     color: #12337D;
+    font-size: 150%;
+    display: inline-block;
 }
 .card-content{
     color: #12337D;
+    display: inline-block;
+    padding-left: 10px;
+    font-size: 100%;
 }
-.plus-button{
+.add-button{
     border-radius: 200px;
     background-color: #12337D;
     color:#D8EAFF;
+
 }
 .search-button{
     background-color: #12337D;

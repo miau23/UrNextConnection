@@ -67,6 +67,23 @@ export const HomePage = () => {
         searchMinGrad('');
         searchTags('');
         setAllUsers(allUsersUnTouched);
+        document.getElementById("search-form-city").reset();
+        document.getElementById("search-form-grad").reset();
+        document.getElementById("search-form-tag").reset();
+
+    }
+    
+    const request = (e) =>{
+        var innerHtml = document.getElementById(e.target.id).innerHTML;
+        console.log( innerHtml);
+        if(innerHtml === "Request"){
+            console.log(innerHtml)
+            document.getElementById(e.target.id).innerHTML = "Requested";
+        }
+        else{
+            document.getElementById(e.target.id).innerHTML = "Request"
+        }
+
     }
 
     return (
@@ -77,6 +94,7 @@ export const HomePage = () => {
         <h2 className = "addSearch">Add Search Criteria</h2>
         <Row>
             <Col className ="col-sm-3">
+            <form id="search-form-city">
             <div className='city-box'>
                 <label className = "city-search" htmlFor="city">
                     City
@@ -93,8 +111,10 @@ export const HomePage = () => {
                     <option value="Washington, DC">Washington, DC</option>
                 </select>
             </div>
+            </form>
             </Col>
             <Col className ="col-sm-3">
+            <form id="search-form-grad">
             <div className='grad-year-box'>
                 <label className = "grad-year-search" htmlFor="city">
                     Grad Year
@@ -125,8 +145,10 @@ export const HomePage = () => {
                 </select>
                 
             </div>
+            </form>
             </Col>
             <Col className ="col-sm-3">
+            <form id="search-form-tag">
                 <div className='tag-box'>
                     <label className = "tag-search" htmlFor="city">
                         Tags
@@ -144,6 +166,7 @@ export const HomePage = () => {
                         <option value="Reading">Reading</option>
                     </select>
                 </div>
+            </form>
             </Col>
             <Col className = "col-sm-1">
                 <div  id="searchPadding">
@@ -162,22 +185,24 @@ export const HomePage = () => {
                 <Col className ="col-sm-3" key={row.data.onyen}>
                     <div className ="card-holder">
                     <div className="card user-cards">
-                    {row.data.photoUrl ? <img id="user-image" className="card-img-top" src={row.data.photoUrl} alt="Card"></img>: <img id="user-image" className="card-img-top" src='https://t4.ftcdn.net/jpg/01/86/29/31/360_F_186293166_P4yk3uXQBDapbDFlR17ivpM6B1ux0fHG.jpg'alt="Card"></img> }
+                    <div id='imgPad'>
+                        {row.data.photoUrl ? <img id="user-image" className="card-img-top" src={row.data.photoUrl} alt="Card"></img>: <img id="user-image" className="card-img-top" src='https://t4.ftcdn.net/jpg/01/86/29/31/360_F_186293166_P4yk3uXQBDapbDFlR17ivpM6B1ux0fHG.jpg'alt="Card"></img> }
+                    </div> 
                         <div className="card-body">
-                            <h4 className ="card-title"> {row.data.firstName + ' ' + row.data.lastName}</h4>
-                            <p className ="card-content card-text">{row.data.gradYear} </p>
-                            
-                            {row.data.tags ? 
+                        {row.data.tags ? 
                                 <Row>
                                 {row.data.tags.tagsList.map((trow) => {
                                     return(
-                                        <Col align = "center" className ="tag-explore col-sm-6">
+                                        <Col key={trow} align = "center" className ="tag-explore col-sm-6">
                                         <h4 className = 'text tags'> {trow} </h4> 
                                         </Col>         
                                     )
                             })} </Row> :  <div></div>}
-                            
-                            <Button className="plus-button"> plus </Button>
+                                <h4 className ="card-title"> {row.data.firstName + ' ' + row.data.lastName}</h4>
+                                <p className ="card-content card-text">{' '+ row.data.gradYear} </p>
+                                <Row>
+                                <Button id={row.data.onyen} className="add-button" onClick={request}>Request</Button>
+                                </Row>
                         </div>
                     </div>
                     </div>
@@ -185,6 +210,7 @@ export const HomePage = () => {
         )
         })}
         </Row>
+        <div id="padding"></div>
     </div>
     </div>
     )

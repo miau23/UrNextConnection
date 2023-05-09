@@ -59,6 +59,12 @@
         border-radius: 10px;
         width: 50%;
 }
+.contact-button{
+    background-color: #12337D;
+    color:#D8EAFF;
+    border-radius: 10px;
+    width: 70%;
+}
 .noPend{
     color: #12337D;;
     font-size: 20px;
