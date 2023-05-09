@@ -55,41 +55,40 @@ export const Profile = () => {
                     </div>
                     <h2 className ='label'> Name </h2>
                     <div>
-                        <h3 className = 'text'> {row.data.firstName + ' ' + row.data.lastName}</h3>
+                        <h3 className = 'profile-text'> {row.data.firstName + ' ' + row.data.lastName}</h3>
                     </div>
                     <h2 className ='label'>Pronouns</h2>
                     <div>
-                        {row.data.pronouns ?  <h3 className = 'text'>{row.data.pronouns}</h3> : <h3 className = 'text'>please set pronouns</h3>}   
+                        {row.data.pronouns ?  <h3 className = 'profile-text'>{row.data.pronouns}</h3> : <h3 className = 'text'>please set pronouns</h3>}   
                     </div>
                     <h2 className ='label'>City</h2>
                     <div>
-                    {row.data.city ?  <h3 className = 'text'>{row.data.city}</h3> : <h3 className = 'text'>please select city</h3>}   
+                    {row.data.city ?  <h3 className = 'profile-text'>{row.data.city}</h3> : <h3 className = 'text'>please select city</h3>}   
                     </div>
                     <h2 className ='label'> Grad Year</h2>
                     <div>
-                        <h3 className = 'text'> {row.data.gradYear}</h3>
+                        <h3 className = 'profile-text'> {row.data.gradYear}</h3>
                     </div>
                     <h2 className ='label'> Email </h2>
                     <div>
-                        <h3 className = 'text'> {row.data.email}</h3>
+                        <h3 className = 'profile-text'> {row.data.email}</h3>
                     </div>
                     <h2 className ='label'> Preferred Method(s) of Communication</h2>
                     <Row>
-                        {row.data.comm ? 
-                        <Row>
+                        {row.data.comm ? <Row>
                         <Col align= 'center'>
-                            <h3 className = 'text tags pref'> Email ({row.data.comm.email})</h3>
+                            <h3 className = 'profile-text pref'> Email ({row.data.comm.email})</h3>
                         </Col>
                         </Row>: <div></div>}
                     </Row>
                     {row.data.comm.instagram ? <Row>
                         <Col align= 'center'>
-                            <h3 className = 'text tags pref'> Instagram ({row.data.comm.instagram})</h3>
+                            <h3 className = 'profile-text pref'> Instagram ({row.data.comm.instagram})</h3>
                         </Col>
                     </Row>: <div></div>}
                     {row.data.comm.number ?<Row>
                         <Col align= 'center'>
-                            <h3 className = 'text tags pref'> Phone Number ({row.data.comm.number})</h3>
+                            <h3 className = 'profile-text pref'> Phone Number ({row.data.comm.number})</h3>
                         </Col>
                     </Row>: <div></div> }
                     <h2 className ='label'> Tags </h2>
@@ -100,15 +99,15 @@ export const Profile = () => {
                         return(
                         
                         <Col align = "center" className ="col-sm-4">
-                            <h3 className = 'text tags'> {trow} </h3>
+                            <h3 className = 'profile-text profile-tags'> {trow} </h3>
                         </Col>
                         )
 
-                    })} </div> :  <h3 className = 'text'>please select tags</h3>}
+                    })} </div> :  <h3 className = 'profile-text'>please select tags</h3>}
                     </Row>
                     <h2 className ='label'> Bio </h2>
                     <div>
-                        {row.data.bio ?  <h3 className = 'text'>{row.data.bio}</h3> : <h3 className = 'text'>You haven't written a bio yet</h3>}   
+                        {row.data.bio ?  <h3 className = 'profile-text'>{row.data.bio}</h3> : <h3 className = 'profile-text'>You haven't written a bio yet</h3>}   
                     </div>
                 </div>)
 
