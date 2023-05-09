@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {  createUserWithEmailAndPassword } from 'firebase/auth';
 import { ref, set } from "firebase/database";
 import { auth, database} from '../firebase';
@@ -10,6 +10,10 @@ import './Login.css';
  
 export const Signup = () => {
     const navigate = useNavigate();
+
+    const navigateLogin = () => {
+        navigate("/login");
+    };
  
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('');
@@ -165,11 +169,9 @@ export const Signup = () => {
                             </div>                                           
                         </form>
                             <p className ="loginPrompt">Already have an account?</p>
-                        <div className ="Login">
-                            <NavLink to="/login" >
-                                Login
-                            </NavLink>  
-                        </div>          
+                            <div className="Login">
+                                <Button className = "login-btn" onClick={navigateLogin}>Login</Button>
+                            </div>               
                     </div>
                                         
                 </Col>
