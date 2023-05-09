@@ -2,16 +2,20 @@
     width:30%;
     text-align: center;
     background-color: #D8EAFF;
-    border-color:#D8EAFF;
+    border:#12337D  solid;
     color:#13294B ;
-    border-radius: 25px;
+    border-radius: 20px;
     padding: 10px 25px;
+    margin: 10px;
+}
+.pronoun-selector::placeholder{
+    font-size: 24px;
 }
 #bio{
     width:50%;
     text-align: center;
     background-color: #D8EAFF;
-    border-color:#D8EAFF;
+    border:#12337D solid;
     color:#13294B ;
     border-radius: 25px;
     padding: 10px 25px;
@@ -30,4 +34,22 @@
 }
 .pop-up{
     width:500px;
+}
+
+::placeholder{
+    font-size: 20px;
+}
+.profile-text-bold{
+    font-size: 18px;
+    font-weight: bold;
+    color: #12337D;
+    padding: 30px;
+}
+.profile-text{
+    font-size: 18px;
+    color: #12337D;
+}
+.input{
+    color: #12337D;
+    border:#12337D  solid;
 }

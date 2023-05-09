@@ -290,7 +290,7 @@ export const EditProfile = () => {
                                     <label  className = "label" htmlFor="comm">
                                         Preferred Method of Communication
                                     </label>
-                                    <label  className = "sub-label" htmlFor="comm">
+                                    <label  className = "label" htmlFor="comm">
                                         Email
                                     </label>
                                     <input
@@ -301,28 +301,42 @@ export const EditProfile = () => {
                                         placeholder={row.data.email}  
                                         onChange={(e) => setCommEmail(e.target.value)}             
                                     />
-                                    <label  className = "sub-label" htmlFor="comm">
+                                    <label  className = "label" htmlFor="comm">
                                         Instagram
                                     </label>
-                                    <input
+                                    {row.data.comm.instagram ? <input
                                         id="comm-insta"
                                         type="comm-insta"
                                         label="comm-insta"
                                         required                                 
-                                        placeholder="Instagram" 
+                                        placeholder={row.data.comm.instagram} 
                                         onChange={(e) => setCommInsta(e.target.value)}             
-                                    />
-                                    <label  className = "sub-label" htmlFor="comm">
+                                    />: <input
+                                    id="comm-insta"
+                                    type="comm-insta"
+                                    label="comm-insta"
+                                    required                                 
+                                    placeholder= 'Instagram'
+                                    onChange={(e) => setCommInsta(e.target.value)}             
+                                    />}
+                                    <label  className = "label" htmlFor="comm">
                                         Phone Number
                                     </label>
-                                    <input
+                                    {row.data.comm.number ? <input
                                         id="comm-num"
                                         type="comm-num"
                                         label="comm-num"
                                         required                                 
-                                        placeholder="Phone Number"  
+                                        placeholder={row.data.comm.number}  
                                         onChange={(e) => setCommNum(e.target.value)}            
-                                    />
+                                    />:<input
+                                    id="comm-num"
+                                    type="comm-num"
+                                    label="comm-num"
+                                    required                                 
+                                    placeholder="Number"  
+                                    onChange={(e) => setCommNum(e.target.value)}            
+                                />}
                                 </div>
                                 <div>
                                     <label  className = "label" htmlFor="tags">
@@ -397,10 +411,9 @@ export const EditProfile = () => {
                                     Save Profile                                
                                 </Button>
                                 </div>
-                                <h2>no longer need your account?</h2>
-                                <h3> hide my profile from other users</h3>
-                                <input type="checkbox" data-toggle="toggle"/>   
-                                <h3>I want to permanently delete my account</h3>  
+                                <h2 className="profile-text-bold">no longer need your account?</h2>
+                                <input className="profile-text" type="checkbox" data-toggle="toggle"/> hide my profile from other users
+                                <h3 className="profile-text-bold">I want to permanently delete my account</h3>  
                                 <Button className = 'blocked-users-btn'> Delete Account </Button> 
                                 <div id="bottom"></div>                                    
                         </form>

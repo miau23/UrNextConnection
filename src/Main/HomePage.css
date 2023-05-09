@@ -2,11 +2,13 @@
     width: 100%;
     padding:5%;
     background-color: #D9D9D9;
-    border-color: #12337D;
+    border:#12337D  solid;
     border-radius: 10px;
 }
 #user-image{
     width:100%;
+    border:#12337D  solid;
+    border-radius: 10px;
 }
 .card-holder{
     padding-top: 5%;
@@ -18,14 +20,14 @@
 }
 .card-title{
     color: #12337D;
-    font-size: 150%;
+    font-size: 125%;
     display: inline-block;
 }
 .card-content{
     color: #12337D;
     display: inline-block;
     padding-left: 10px;
-    font-size: 100%;
+    font-size: 90%;
 }
 .add-button{
     border-radius: 200px;
@@ -38,12 +40,16 @@
     color:#D8EAFF;
     border-radius: 10px;
     width: 100%;
+    font-weight: bold;
+    font-size: 18px;
 }
 .reset-button{
     background-color: #12337D;
     color:#D8EAFF;
     border-radius: 10px;
     width: 100%;
+    font-weight: bold;
+    font-size: 18px;
 }
 #searchPadding{
     padding-top: 40px;
@@ -56,28 +62,34 @@
 }
 .addSearch{
     color:#12337D;
+    font-size: 24px;
+    padding-top: 12px;
 }
 .city-search, .grad-year-search, .tag-search {
-    font-size: 25px;
+    font-size: 18px;
     color:#12337D;
 }
 .city-search-selector, .tag-search-selector{
     width:100%;
     text-align: center;
     background-color: #D8EAFF;
-    border-color:#D8EAFF;
+    border:#12337D  solid;
     color:#13294B ;
-    border-radius: 25px;
+    border-radius: 20px;
     padding: 10px 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .max-selector,.min-selector{
     width:40%;
     text-align: center;
     background-color: #D8EAFF;
-    border-color:#D8EAFF;
+    border:#12337D  solid;
     color:#13294B ;
-    border-radius: 25px;
+    border-radius: 20px;
     padding: 10px 10px;
+    margin: 10px;
 }
 
 .grad-year-box{
@@ -85,7 +97,7 @@
 }
 
 .text{
-    font-size: 16px;
+    font-size: 90%;
 }
 .tag-explore{
     padding-left: 5px;
