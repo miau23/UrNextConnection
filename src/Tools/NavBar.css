@@ -5,34 +5,36 @@
 .nav-titles{
     font-size: 20px;
     color: #12337D;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 5%;
 }
 .nav-titles:hover{
     background-color: #12337D;
     color: #D8EAFF;
     border-radius: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-left: 5%;
 }
-.nav-link.active{
+.nav-titles.active{
     color: #12337D;
     font-weight: bold;
 }
 .nav-titles-help{
     font-size: 20px;
-    color: #12337D;   
-    margin-left: 500px;
-    margin-right: 30px;
+    color: #12337D;  
+    margin-left: 5%;
+    margin-right: 40px;
+}
+.nav-titles-help.active{
+    color: #12337D;
+    font-weight: bold;
 }
 .nav-titles-help:hover{
     background-color: #12337D;
     color: #D8EAFF;
     border-radius: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-left: 5%;
+    margin-right: 40px;
 }
 #nav-logo{
-    width:250px;
+    width: 275px;
     padding-left:25px;
 }

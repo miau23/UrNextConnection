@@ -15,7 +15,7 @@ export const NavBar = () => {
             </LinkContainer>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className='justify-content-center'>
+                <Nav className='me-auto'>
                     <LinkContainer to="/homePage">
                         <Nav.Link className = "nav-titles"> Explore </Nav.Link>
                     </LinkContainer>
@@ -25,6 +25,8 @@ export const NavBar = () => {
                     <LinkContainer to="/profile">
                         <Nav.Link className = "nav-titles"> Profile </Nav.Link>
                     </LinkContainer>
+                </Nav>
+                <Nav>
                     <LinkContainer to="/help"> 
                         <Nav.Link className = "nav-titles-help"> Help </Nav.Link>
                     </LinkContainer>
