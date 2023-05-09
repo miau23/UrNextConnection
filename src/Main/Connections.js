@@ -135,14 +135,16 @@ export const Connections = () => {
                     <div className="card user-cards">
                     <img id="user-image" className="card-img-top" src='https://media.licdn.com/dms/image/C4E03AQHVrcC4pXy6sg/profile-displayphoto-shrink_400_400/0/1631906467602?e=1687996800&v=beta&t=pZLFxxrBjmJFp4sSsWsBqr7RL9dxNb2KXVGJWqoAYaM' alt="Card"></img>
                         <div className="card-body">
-                            <h4 className ="card-title"> Jack Cooper </h4>
-                            <p className ="card-content card-text"> 2022 </p>
                                 <Row>
                                        <Col align = "center" className ="tag-explore col-sm-6">
                                         <h4 className = 'text tags'> Hiking </h4> 
                                         </Col>                             
-                                </Row> 
-                                <Button className="plus-button"> plus </Button>
+                                </Row>
+                            <h4 className ="card-title"> Jack Cooper </h4>
+                            <p className ="card-content card-text"> 2022 </p>
+                            <Col align='center'>
+                                <Button className="contact-button"> View Contact Info </Button>
+                            </Col>
                             </div>
                     </div>
                     </div>
@@ -152,15 +154,17 @@ export const Connections = () => {
                     <div className="card user-cards">
                     <img id="user-image" className="card-img-top" src='https://media.licdn.com/dms/image/C5603AQGQfEOhHLJXOQ/profile-displayphoto-shrink_400_400/0/1637612292069?e=1687996800&v=beta&t=OIiaLlQSus97w51-xN5riMJuLbRVM2BeQ0jzimbjabc' alt="Card"></img>
                         <div className="card-body">
-                            <h4 className ="card-title"> Emily Davis </h4>
-                            <p className ="card-content card-text"> 2023 </p>
                                 <Row>
                                        <Col align = "center" className ="tag-explore col-sm-6">
                                         <h4 className = 'text tags'> Reading </h4> 
                                         </Col>                             
                                 </Row> 
-                                <Button className="plus-button"> plus </Button>
-                            </div>
+                            <h4 className ="card-title"> Emily Davis </h4>
+                            <p className ="card-content card-text"> 2023 </p>
+                            <Col align='center'>
+                                <Button className="contact-button"> View Contact Info </Button>
+                            </Col>                          
+                              </div>
                     </div>
                     </div>
                 </Col>
@@ -169,8 +173,6 @@ export const Connections = () => {
                     <div className="card user-cards">
                     <img id="user-image" className="card-img-top" src='https://media.licdn.com/dms/image/C4E03AQFg0DF5LmVsJw/profile-displayphoto-shrink_400_400/0/1639074280350?e=1687996800&v=beta&t=gB-hgE2qnqqDixTdSurh0wu77QqToJAVWcClDwzFhxI' alt="Card"></img>
                         <div className="card-body">
-                            <h4 className ="card-title"> Ethan Wen </h4>
-                            <p className ="card-content card-text"> 2023 </p>
                                 <Row>
                                        <Col align = "center" className ="tag-explore col-sm-6">
                                         <h4 className = 'text tags'> Hiking </h4> 
@@ -182,8 +184,12 @@ export const Connections = () => {
                                         <h4 className = 'text tags'> Video Games </h4> 
                                         </Col>                             
                                 </Row> 
-                                <Button className="plus-button"> plus </Button>
-                            </div>
+                            <h4 className ="card-title"> Ethan Wen </h4>
+                            <p className ="card-content card-text"> 2023 </p>
+                            <Col align='center'>
+                                <Button className="contact-button"> View Contact Info </Button>
+                            </Col>
+                                                        </div>
                     </div>
                     </div>
                 </Col>
@@ -192,15 +198,18 @@ export const Connections = () => {
                     <div className="card user-cards">
                     <img id="user-image" className="card-img-top" src='https://media.licdn.com/dms/image/C5603AQFCnmTmOqFJ3g/profile-displayphoto-shrink_400_400/0/1653376733743?e=1687996800&v=beta&t=LJNHJ6VeePO4aEEKBzUfhsGnvIAT7HNUvh_2Z7Uxb-4' alt="Card"></img>
                         <div className="card-body">
-                            <h4 className ="card-title"> Emily Chen </h4>
-                            <p className ="card-content card-text"> 2021 </p>
                                 <Row>
                                        <Col align = "center" className ="tag-explore col-sm-6">
                                         <h4 className = 'text tags'> Seeking Advice </h4> 
                                         </Col>                             
                                 </Row> 
-                                <Button className="plus-button"> plus </Button>
-                            </div>
+                            <h4 className ="card-title"> Emily Chen </h4>
+                            <p className ="card-content card-text"> 2021 </p>
+                                
+                            <Col align='center'>
+                                <Button className="contact-button"> View Contact Info </Button>
+                            </Col>
+                                                        </div>
                     </div>
                     </div>
                 </Col>
@@ -210,8 +219,6 @@ export const Connections = () => {
                 <div className="card user-cards">
                 <img id="user-image" className="card-img-top" src={emma} alt="Card"></img>
                     <div className="card-body">
-                        <h4 className ="card-title"> Emma Chamberlain </h4>
-                        <p className ="card-content card-text"> 2021 </p>
                             <Row>
                                    <Col align = "center" className ="tag-explore col-sm-6">
                                     <h4 className = 'text tags'> Coffee </h4> 
@@ -226,8 +233,13 @@ export const Connections = () => {
                                     <h4 className = 'text tags'> Seeking Advice </h4> 
                                     </Col>                      
                             </Row> 
-                            <Button className="plus-button"> plus </Button>
-                        </div>
+                        <h4 className ="card-title"> Emma Chamberlain </h4>
+                        <p className ="card-content card-text"> 2021 </p>
+                            
+                        <Col align='center'>
+                                <Button className="contact-button"> View Contact Info </Button>
+                            </Col>
+                                                    </div>
                 </div>
                 </div>
                 </Col> : <div></div>}
@@ -237,8 +249,6 @@ export const Connections = () => {
                 <div className="card user-cards">
                 <img id="user-image" className="card-img-top" src= {bob} alt="Card"></img>
                     <div className="card-body">
-                        <h4 className ="card-title"> Bob Ross </h4>
-                        <p className ="card-content card-text"> 2023 </p>
                             <Row>
                                    <Col align = "center" className ="tag-explore col-sm-6">
                                     <h4 className = 'text tags'> Reading </h4> 
@@ -246,8 +256,12 @@ export const Connections = () => {
                                     <h4 className = 'text tags'> Looking for Roommates </h4> 
                                     </Col>                             
                             </Row> 
-                            <Button className="plus-button"> plus </Button>
-                        </div>
+                        <h4 className ="card-title"> Bob Ross </h4>
+                        <p className ="card-content card-text"> 2023 </p>
+                        <Col align='center'>
+                                <Button className="contact-button"> View Contact Info </Button>
+                            </Col>
+                                                    </div>
                 </div>
                 </div>
                 </Col> : <div></div>}
