@@ -89,10 +89,3 @@ label {
     width: 10%;
     font-weight: bold;
 }
-
-.loginReturnBtn{
-    border: none;
-    cursor: pointer;
-    appearance: none;
-    background-color: inherit;
-}
